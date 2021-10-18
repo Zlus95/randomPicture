@@ -21,7 +21,7 @@ export default function ListUser() {
           <ul>
             {stateUser.map((user) => {
               return (
-                <li>
+                <li key={user.id}>
                   <OneUser user={user} />
                 </li>
               );

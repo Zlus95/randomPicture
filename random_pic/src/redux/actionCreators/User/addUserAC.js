@@ -1,11 +1,11 @@
 import { ADD_USER, ADD_USER_SAGA } from "../../types/types";
 
-export const addUserAC = (text) => ({
+export const addUserAC = (url) => ({
   type: ADD_USER,
-  payload: text,
+  payload: url,
 });
 
-export const addUserSagaAC = (text) => ({
+export const addUserSagaAC = (url) => ({
   type: ADD_USER_SAGA,
-  payload: text,
+  payload: url,
 });

@@ -1,13 +1,11 @@
 import React from "react";
 
 export default function OneUser({ user }) {
-  console.log(user, "xzxzx");
   return (
     <div>
       <div>
         <div>
-          <p>{user.name}</p>
-          <p>{user.last}</p>
+          {user.name} {user.last}
         </div>
         <img src={user.img} alt="" />
       </div>
