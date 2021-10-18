@@ -1,4 +1,4 @@
-import { ADD_CAT } from "../types/types";
+import { ADD_CAT } from "../../types/types";
 
 export const addCatAC = () => async (dispatch) => {
   const response = await fetch(

@@ -1,0 +1,14 @@
+.header {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(159, 207, 248);
+  padding: 15px 0;
+}
+
+.link {
+  margin: 0 30px;
+}
+
+.activeLink {
+  color: rgb(252, 155, 76);
+}

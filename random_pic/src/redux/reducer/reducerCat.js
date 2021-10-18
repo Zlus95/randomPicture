@@ -1,6 +1,6 @@
 import { ADD_CAT, DELETE_CAT, SET_STATUS } from "../types/types";
 
-export const Reducer = (state = [], action) => {
+export const ReducerCat = (state = [], action) => {
   switch (action.type) {
     case ADD_CAT:
       return state.concat(action.payload);
@@ -10,7 +10,8 @@ export const Reducer = (state = [], action) => {
 
     case SET_STATUS:
       return state.map((pic) => {
-        if (pic.id === action.payload.id) return ({...pic, status: !pic.status});
+        if (pic.id === action.payload.id)
+          return { ...pic, status: !pic.status };
         return pic;
       });
 

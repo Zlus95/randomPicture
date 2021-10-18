@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setStatusAC } from "../../redux/actionCreators/ setStatusAC";
-import { addCatAC } from "../../redux/actionCreators/addCatAC";
-import { DeleteCatAC } from "../../redux/actionCreators/deleteCatAC";
+import { setStatusAC } from "../../redux/actionCreators/Cat/setStatusAC";
+import { addCatAC } from "../../redux/actionCreators/Cat/addCatAC";
+import { DeleteCatAC } from "../../redux/actionCreators/Cat/deleteCatAC";
 import OneCat from "../OneCat/OneCat";
 import css from "./ListCats.module.css";
 

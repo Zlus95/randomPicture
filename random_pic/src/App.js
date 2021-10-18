@@ -1,9 +1,11 @@
-import ListCats from "./components/ListCats/ListCats";
+import Header from "./components/Header/Header";
+import Main from "./components/Main/Main";
 
 function App() {
   return (
     <div>
-      <ListCats />
+      <Header />
+      <Main />
     </div>
   );
 }

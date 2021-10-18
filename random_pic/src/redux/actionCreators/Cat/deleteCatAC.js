@@ -1,4 +1,4 @@
-import { DELETE_CAT } from "../types/types";
+import { DELETE_CAT } from "../../types/types";
 
 export const DeleteCatAC = (id) => async (dispatch) => {
   dispatch({
