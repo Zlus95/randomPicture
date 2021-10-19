@@ -1,4 +1,4 @@
-import { ADD_USER, DELETE_USER } from "../types/types";
+import { ADD_USER, DELETE_USER, CHANGE_STATUS_USER } from "../types/types";
 
 export const reducerUser = (state = [], action) => {
   switch (action.type) {
@@ -7,6 +7,17 @@ export const reducerUser = (state = [], action) => {
 
     case DELETE_USER:
       return state.filter((user) => user.id !== action.payload.id);
+
+    case CHANGE_STATUS_USER:
+      return state.map((user) => {
+        if (user.id === action.payload) {
+          return {
+            ...user,
+            status: !user.status,
+          };
+        }
+        return user;
+      });
 
     default:
       return state;

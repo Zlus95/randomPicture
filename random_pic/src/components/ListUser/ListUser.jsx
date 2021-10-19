@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { addUserSagaAC } from "../../redux/actionCreators/User/addUserAC";
 import { deleteUserSagaAC } from "../../redux/actionCreators/User/deleteUserAC";
+import { changeStatusUserSagaAC } from "../../redux/actionCreators/User/changeStatus";
 import OneUser from "../OneUser/OneUser";
 
 export default function ListUser() {
@@ -15,6 +16,10 @@ export default function ListUser() {
   const deleteUser = (id) => {
     dispatch(deleteUserSagaAC(id));
   };
+
+  const changeStatus = (id, status) => {
+    dispatch(changeStatusUserSagaAC(id, status));
+  };
   return (
     <div>
       <div>
@@ -26,7 +31,11 @@ export default function ListUser() {
             {stateUser.map((user) => {
               return (
                 <li key={user.id}>
-                  <OneUser user={user} deleteUser={deleteUser} />
+                  <OneUser
+                    user={user}
+                    deleteUser={deleteUser}
+                    changeStatus={changeStatus}
+                  />
                 </li>
               );
             })}

@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function OneUser({ user, deleteUser }) {
+export default function OneUser({ user, deleteUser, changeStatus }) {
   return (
     <div>
       <div>
@@ -17,8 +17,11 @@ export default function OneUser({ user, deleteUser }) {
         >
           Удалить
         </button>
-        <button onClick={() => console.log("проверка смены статуса")}>
-          Смена статуса
+        <button
+          onClick={() => changeStatus(user.id)}
+          style={{ color: user.status ? "red" : "blueviolet" }}
+        >
+          {user.status ? "Нравится" : "Не нравится"}
         </button>
       </div>
     </div>
