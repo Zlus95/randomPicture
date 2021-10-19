@@ -8,7 +8,7 @@ import css from "./ListCats.module.css";
 
 export default function ListCats() {
   const dispatch = useDispatch();
-  const catsState = useSelector((state) => state);
+  const catsState = useSelector((state) => state.cats);
   const [filteredCat, setFilteredCat] = useState([]);
   const [filterType, setFilterType] = useState(true);
 

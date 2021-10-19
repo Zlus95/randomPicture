@@ -1,20 +1,27 @@
 import { call, put, takeEvery } from "redux-saga/effects";
-import { ADD_USER_SAGA } from "../types/types";
+import { ADD_USER_SAGA, DELETE_USER_SAGA } from "../types/types";
 import { fetchUser } from "../api/fetchUser";
 import { addUserAC } from "../actionCreators/User/addUserAC";
+import { deleteUserAC } from "../actionCreators/User/deleteUserAC";
 
 function* addUserWorker() {
   try {
-    console.log("111");
-    const dogCall = yield call(fetchUser);
-    console.log("2222", dogCall);
-    yield put(addUserAC(dogCall));
-    console.log("3333");
+    const userCall = yield call(fetchUser);
+    yield put(addUserAC(userCall));
   } catch (error) {
-    yield put({ type: "ОШИБКА ИЗ addDogWorker", message: error.message });
+    yield put({ type: "ОШИБКА ИЗ addUserWorker", message: error.message });
+  }
+}
+
+function* deleteUserWorker(action) {
+  try {
+    yield put(deleteUserAC(action.payload));
+  } catch (error) {
+    yield put({ type: "ОШИБКА ИЗ deleteUserWorker", message: error.message });
   }
 }
 
 export function* WatcherUser() {
   yield takeEvery(ADD_USER_SAGA, addUserWorker);
+  yield takeEvery(DELETE_USER_SAGA, deleteUserWorker);
 }

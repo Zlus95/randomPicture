@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function OneUser({ user }) {
+export default function OneUser({ user, deleteUser }) {
   return (
     <div>
       <div>
@@ -10,7 +10,11 @@ export default function OneUser({ user }) {
         <img src={user.img} alt="" />
       </div>
       <div>
-        <button onClick={() => console.log("проверка удаления")}>
+        <button
+          onClick={() => {
+            deleteUser(user);
+          }}
+        >
           Удалить
         </button>
         <button onClick={() => console.log("проверка смены статуса")}>

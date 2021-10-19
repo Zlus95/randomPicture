@@ -30,6 +30,9 @@ export default function Header() {
       >
         Saga
       </NavLink>
+      <div className={css.link}>
+        <button>Theme</button>
+      </div>
     </div>
   );
 }
