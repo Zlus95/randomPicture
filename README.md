@@ -2,11 +2,22 @@
 
 # Приложение для получения картинок/Gif по API
 
+В данном проекте были реализованы асинхронные процессы двумя путями:
+
+<ul>
+<li>
+Redux-thunk;
+</li>
+<li>
+Redux-saga;
+</li>
+</ul>
+
 Реализуемые функции:
 
 <ul>
 <li>
-Получать картинки/Gif через API и сохраняем данные картинки в сторе
+Получать картинки/Gif через API и сохранять данные картинки в сторе
 </li>
 <li>
 Удалять картинки из стора
@@ -23,7 +34,7 @@
 
 <ul>
 <li>
-API: https://api.thecatapi.com/v1/images/search?size=full;
+API;
 </li>
 <li>
 React;
@@ -33,6 +44,9 @@ Redux;
 </li>
 <li>
 Redux-thunk;
+</li>
+<li>
+Redux-saga;
 </li>
 <li>
 Redux-devtools-extension;

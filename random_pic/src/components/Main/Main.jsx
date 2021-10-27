@@ -3,6 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import ListCats from "../ListCats/ListCats";
 import ListUser from "../ListUser/ListUser";
 import MainPage from "../MainPage/MainPage";
+import NotFound from "../NotFound/NotFound";
 
 export default function Main() {
   return (
@@ -17,6 +18,7 @@ export default function Main() {
         <Route exact path="/">
           <MainPage />
         </Route>
+        <Route component={NotFound} />
       </Switch>
     </div>
   );

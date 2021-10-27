@@ -1,16 +1,21 @@
 import React from "react";
+import css from "./OneUser.module.css";
 
 export default function OneUser({ user, deleteUser, changeStatus }) {
+  console.log(user.status);
   return (
     <div>
       <div>
-        <div>
+        <div className={css.main_handler}>
           {user.name} {user.last}
         </div>
-        <img src={user.img} alt="" />
+        <div className={css.img}>
+          <img src={user.img} alt="" />
+        </div>
       </div>
-      <div>
+      <div className={css.but_main}>
         <button
+          className={css.but}
           onClick={() => {
             deleteUser(user);
           }}
@@ -18,6 +23,7 @@ export default function OneUser({ user, deleteUser, changeStatus }) {
           Удалить
         </button>
         <button
+          className={css.but}
           onClick={() => changeStatus(user.id)}
           style={{ color: user.status ? "red" : "blueviolet" }}
         >
